@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: zuul
+  profiles:
+    active: dev
+server:
+  port: 5555
+zuul:
+  routes:
+    hello:
+      path: /api-a/**
+      serviceId:  helloService
+  filter:
+    interval: 5
+    root: filter
+  host:
+    max-total-connections: 200
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://127.0.0.1:1111/eureka
+logging:
+  level:
+    org:
+      springframwork: debug

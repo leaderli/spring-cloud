@@ -1,0 +1,33 @@
+server:
+  port: 9000
+logging:
+  level:
+    org:
+      springframework: error
+    com:
+      ribbon:
+          debug
+management:
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude:
+    jmx:
+      exposure:
+        include: "*"
+        exclude:
+spring:
+  application:
+    name: ribbon
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://127.0.0.1:1111/eureka,http://127.0.0.1:1112/eureka,http://127.0.0.1:1113/eureka
+
+

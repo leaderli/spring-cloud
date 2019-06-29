@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: eureka
+server:
+  port: 1110
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    fetch-registry: false
+    register-with-eureka: true
+  server:
+    enable-self-preservation: false

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:leaderli/spring-cloud-config.git
+          skipSslValidation: true
+          timeout: 5
+          search-paths: config
+server:
+  port: 7001
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://127.0.0.1:1111/eureka
